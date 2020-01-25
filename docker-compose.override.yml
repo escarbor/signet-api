@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+    api:
+        volumes:
+          - ./api:/usr/src/app
+        env_file: .env
+          
+    db:
+        volumes:
+            - ./Temp/postgres:/var/lib/postgresql/data
+            - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+        env_file: .env
+    

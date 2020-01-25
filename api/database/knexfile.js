@@ -1,4 +1,5 @@
-// Update with your config settings.
+const user = process.env.POSTGRES_USER;
+const password = process.env.POSTGRES_PASSWORD;
 
 module.exports = {
 
@@ -6,8 +7,8 @@ module.exports = {
     client: 'postgres',
     connection: {
       host: 'db',
-      user: $POSTGRES_USER,
-      password: $POSTGRES_PASSWORD,
+      user: user,
+      password: password,
       database: 'signettest',
       port: '5432'
     },
@@ -27,8 +28,8 @@ module.exports = {
     client: 'postgres',
     connection: {
       host: 'db',
-      user: $POSTGRES_USER,
-      password: $POSTGRES_PASSWORD,
+      user: user,
+      password: password,
       database: 'signet',
       port: '5432'
     },
