@@ -1,4 +1,4 @@
-https://github.com/escarbor/signet-api/workflows/CI/badge.svg
+![](https://github.com/escarbor/signet-api/workflows/CI/badge.svg)
 
 ## signet-api
 
