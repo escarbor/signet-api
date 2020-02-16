@@ -1,6 +1,6 @@
 const environment = process.env.NODE_ENV;
 exports.seed = function(knex) {
-  if(environment !== 'staging' && environment != 'production'){
+  if(environment == 'production'){
     return knex('entries').del()
     .then(function () {
       return knex('entries').insert([

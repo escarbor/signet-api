@@ -2,7 +2,6 @@ const user = process.env.POSTGRES_USER;
 const password = process.env.POSTGRES_PASSWORD;
 
 module.exports = {
-
   test: {
     client: 'postgres',
     connection: {
@@ -34,6 +33,36 @@ module.exports = {
       port: '5432'
     },
     debug: true,
+    pool: {
+      min: 1,
+      max: 20
+    },
+    migrations: {
+      directory: __dirname + "/migrations"
+    },
+    seeds: {
+      directory: __dirname + "/seeds"
+    },
+  },
+
+  staging: {
+    client: 'postgres',
+    connection: process.env.STAGING_CONNECTION_STRING,
+    pool: {
+      min: 1,
+      max: 20
+    },
+    migrations: {
+      directory: __dirname + "/migrations"
+    },
+    seeds: {
+      directory: __dirname + "/seeds"
+    },
+  },
+
+  production: {
+    client: 'postgres',
+    connection: process.env.PROD_CONNECTION_STRING,
     pool: {
       min: 1,
       max: 20
